@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Heads or tails</title>
+  </head>
+  <body>
+    <button onclick="
+     answer= guess()
+     if (answer === 'heads') {
+      console.log('You are right')
+     } else {
+      console.log('You are wrong')
+     }
+    ">Heads</button>
+    <button onclick="
+     answer= guess()
+     if (answer === 'tails') {
+      console.log('You are right')
+     } else {
+      console.log('You are wrong')
+     }
+    ">Tails</button>
+  </body>
+  <script>
+    function guess() {
+     const states = Math.random();
+     return states < 0.5 ? 'heads' : 'tails';
+    }
+  </script>
+</html>

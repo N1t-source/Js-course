@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <button onclick="
+      cost +=coffee;
+      console.log(`Order added: Coffee`);
+      console.log(`Price of Coffee:$${coffee}`)
+    ">Coffee</button>
+    <button onclick="
+      cost +=bagel;
+      console.log(`Order added: Bagel`);
+      console.log(`Price of Coffee:$${bagel}`)
+    ">Bagel</button>
+    <button onclick="
+      cost +=soup;
+      console.log(`Order added: Soup`);
+      console.log(`Price of Coffee:$${soup}`)
+    ">Soup</button>
+    <button onclick="
+      console.log(`Cost:$${cost}`);
+    ">Cost</button>
+    <button onclick="
+      cost = 0;
+      console.log(`Order was cleared`);
+      console.log(`Total cost:$${cost}`);
+    ">Reset</button>
+    <button onclick="
+      taxCost = cost + (cost*0.1);
+      console.log(`Total Cost:$${taxCost}`);
+    ">With Tax Cost</button>
+  </body>
+  <script>
+    const name = 'Othniel';
+    console.log(`My name is:${name}`);
+    let coffee = 5;
+    let bagel = 3;
+    let soup = 9;
+    let cost = 0;
+    let taxCost = 0;
+  </script>
+</html>

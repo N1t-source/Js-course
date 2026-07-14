@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+  <body>
+
+  </body>
+  <script>
+    const product1 = {
+      product: 'Basketball',
+      price: `$${2095/100}`,
+      'delivery-time' : '1-day',
+      setPrice(newPrice) {
+        this.price = `$${newPrice/100}`
+      }
+    }
+    product1['delivery-time'] = '3-days'
+    console.log(product1)
+
+    product1.setPrice(2595)
+    console.log(product1)
+    console.log(product1['delivery-time'])
+  </script>
+</html>
