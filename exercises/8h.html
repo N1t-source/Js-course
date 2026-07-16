@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Calculator</title>
+  </head>
+  <body>
+    <p>
+      <button onclick="
+        calculator('1')
+      ">
+       1
+      </button>
+      <button onclick="
+        calculator('2')
+      ">
+       2
+      </button>
+      <button onclick="
+        calculator('3')
+      ">
+       3
+      </button>
+    </p>
+    <p>
+      <button onclick="
+        calculator('4')
+      ">
+       4
+      </button>
+      <button onclick="
+        calculator('5')
+      ">
+       5
+      </button>
+
+    </p>
+    <button onclick="
+     calculator(' + ')
+    ">
+      +
+    </button>
+    <button onclick="
+     calculator('=')
+    ">
+      =
+    </button>
+    <button onclick="
+     setValue(perValue)
+    ">
+      Store Data
+    </button>
+    <button onclick="
+     getValue()
+    ">
+      Get Data
+    </button>
+    <button>
+      clear Data
+    </button>
+  </body>
+  <script>
+    let perValue = 0;
+    let calculation ='' ;
+
+    function calculator(value) {
+      if (value != '=') {
+        calculation += value
+        console.log(calculation)
+      } else {
+        calculation=eval(calculation);
+        perValue += calculation
+        console.log(calculation);
+      }
+
+    }
+  
+    function setValue(tValue){
+      localStorage.setItem('ans',tValue);
+      console.log('Stored the value')
+    }
+
+    function getValue(){
+      let tempValue= localStorage.getItem('ans');
+      console.log(`The value is ${tempValue}`)
+    }
+
+  </script>
+</html>

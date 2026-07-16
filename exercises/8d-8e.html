@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <title>compare function</title>
+  <body>
+  </body> 
+  <script>
+    const product1 = {
+      product: "Basketball",
+      price : 20.55
+    };
+
+    const product2 = {
+      product : "Expensive asf",
+      price : 1999.88 
+    };
+
+    function comparePrice(product1,product2) {
+      let response = product1.price < product2.price ? `${product1.product} is cheaper than ${product2.product}` : `${product2.product} is cheaper than ${product1.product}`
+      console.log(response)
+    }
+
+    function isSameProduct(product1,product2) {
+
+      let valid = product1.product === product2.product && product1.price === product2.price ? `${product1.product} and ${product2.product}\nThey are identical` : `${product1.product} and ${product2.product}\nThey are not identical`
+      console.log(valid)
+    }
+
+    comparePrice(product2,product1)
+    isSameProduct(product1,product1)
+  </script>
+</html>
