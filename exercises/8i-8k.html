@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Heads or tails</title>
+  </head>
+  <body>
+    <button onclick="
+     guess('heads')    
+    ">Heads</button>
+    <button onclick="
+     guess('tails')
+    ">Tails</button>
+    <button onclick="
+     getValue()
+    ">
+      Get score
+    </button>
+    <button onclick="
+      resetScore()
+    ">
+      Reset score
+    </button>
+  </body>
+  <script>
+    let score = JSON.parse(localStorage.getItem
+    ('score')) || {
+      wins : 0,
+      losses : 0,
+    }
+
+    function guess(paramater) {
+     
+     let ans = Math.random() < 0.5 ? 'heads' : 'tails';
+
+     if (paramater === ans) {
+      console.log('You are right');
+      score.wins += 1
+     } else {
+      console.log('You are wrong')
+      score.losses += 1
+     }
+
+      localStorage.setItem('score', JSON.stringify
+      (score));
+
+      console.log(`You picked ${paramater} and the Guess was ${ans}. \n Wins:${score.wins},Losses:${score.losses}`)
+    }
+
+    function getValue() {
+      console.log(localStorage.getItem('score'))
+    }
+
+    function resetScore() {
+      score = { wins: 0, losses: 0 };
+      localStorage.removeItem('score');
+      console.log('Score reset');
+    }
+    
+
+  </script>
+</html>
